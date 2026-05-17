@@ -109,7 +109,7 @@ body {
     position: relative;
     width: 100%;
     /* Reduced from 200vh to 150vh to make the animation play incredibly fast */
-    height: 150vh; 
+    height: 250vh; 
 }
 
 .canvas-wrapper {
