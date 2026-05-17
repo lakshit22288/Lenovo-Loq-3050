@@ -108,8 +108,8 @@ body {
 .scroll-container {
     position: relative;
     width: 100%;
-    /* Reduced from 800vh to 200vh to make the animation play fast (in about 1 scroll) */
-    height: 200vh; 
+    /* Reduced from 200vh to 150vh to make the animation play incredibly fast */
+    height: 150vh; 
 }
 
 .canvas-wrapper {
