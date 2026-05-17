@@ -56,8 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Responsive Canvas Size & Image Draw (Cover Mode)
     const resizeCanvas = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Fix blurriness on mobile/Retina screens by scaling to devicePixelRatio
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
         drawFrame(currentScrollFraction);
     };
 
@@ -135,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(tick);
     };
 
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
     // Initialize System
     const init = async () => {
         // 1. Preload assets
@@ -147,8 +152,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Register Events
         window.addEventListener('scroll', updateScrollMetrics, { passive: true });
         window.addEventListener('resize', () => {
-            updateScrollMetrics();
-            resizeCanvas();
+            const widthChanged = window.innerWidth !== lastWidth;
+            const heightChanged = Math.abs(window.innerHeight - lastHeight) > 100;
+
+            // Only redraw canvas if width changed (rotation) or height changed massively (prevents mobile address bar stutter)
+            if (widthChanged || heightChanged) {
+                lastWidth = window.innerWidth;
+                lastHeight = window.innerHeight;
+                updateScrollMetrics();
+                resizeCanvas();
+            } else {
+                updateScrollMetrics();
+            }
         });
 
         // 4. Start Core Render/Scroll Loop
