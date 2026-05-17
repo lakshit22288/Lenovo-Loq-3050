@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let maxScroll = 0;
     let targetScrollFraction = 0;
     let currentScrollFraction = 0;
-    const lerpFactor = 0.08; // Smoothness factor (lower = smoother, higher = faster)
+    const lerpFactor = 0.2; // Smoothness factor (increased for faster, snappier response)
 
     // Helper to format frame path
     const getFramePath = (index) => {

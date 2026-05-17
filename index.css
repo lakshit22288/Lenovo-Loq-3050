@@ -108,8 +108,8 @@ body {
 .scroll-container {
     position: relative;
     width: 100%;
-    /* Static 800vh provides a long scrollable track */
-    height: 800vh; 
+    /* Reduced from 800vh to 200vh to make the animation play fast (in about 1 scroll) */
+    height: 200vh; 
 }
 
 .canvas-wrapper {
