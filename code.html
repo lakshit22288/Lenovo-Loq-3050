@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lenovo LOQ - Gaming Laptop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&amp;family=Manrope:wght@400;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#4a8eff",
+                        "on-secondary": "#520072",
+                        "on-error": "#690005",
+                        "primary": "#adc7ff",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary-fixed": "#320047",
+                        "surface-container-highest": "#323537",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container-low": "#191c1e",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#414754",
+                        "on-secondary-fixed-variant": "#74009f",
+                        "on-tertiary-fixed": "#1a1b21",
+                        "on-tertiary-fixed-variant": "#46464c",
+                        "on-tertiary": "#2f3036",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-container": "#1d2022",
+                        "on-tertiary-container": "#29292f",
+                        "on-background": "#e0e3e5",
+                        "secondary-fixed": "#f8d8ff",
+                        "error-container": "#93000a",
+                        "on-surface": "#e0e3e5",
+                        "on-secondary-container": "#fff6fc",
+                        "on-primary-container": "#00285b",
+                        "tertiary": "#c7c6cd",
+                        "secondary-fixed-dim": "#ebb2ff",
+                        "on-primary": "#002e68",
+                        "surface-container-high": "#272a2c",
+                        "tertiary-container": "#909097",
+                        "background": "#101415",
+                        "secondary": "#ebb2ff",
+                        "tertiary-fixed-dim": "#c7c6cd",
+                        "surface-tint": "#adc7ff",
+                        "inverse-primary": "#005bc0",
+                        "on-surface-variant": "#c1c6d7",
+                        "inverse-on-surface": "#2d3133",
+                        "surface": "#101415",
+                        "secondary-container": "#b600f8",
+                        "surface-bright": "#363a3b",
+                        "surface-dim": "#101415",
+                        "surface-container-lowest": "#0b0f10",
+                        "surface-variant": "#323537",
+                        "outline": "#8b90a0",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-fixed-dim": "#adc7ff",
+                        "tertiary-fixed": "#e3e1e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "0rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["JetBrains Mono"],
+                        "label-xs": ["JetBrains Mono"],
+                        "body-lg": ["JetBrains Mono"],
+                        "display-lg": ["Sora"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Sora"],
+                        "headline-lg-mobile": ["Sora"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-xs": ["10px", { "lineHeight": "12px", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .bg-stripes {
+            background-image: repeating-linear-gradient(45deg, #000000, #000000 10px, #1a1a1a 10px, #1a1a1a 20px);
+        }
+        .bg-stripes-accent {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 85, 0, 0.1) 10px, rgba(255, 85, 0, 0.1) 20px);
+        }
+        .data-tile {
+            background: #0a0a0a;
+            border: 4px solid #333333;
+            position: relative;
+        }
+        .data-tile::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent 95%, #ff5500 95%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .data-tile:hover {
+            border-color: #ff5500;
+        }
+        .data-tile:hover::before {
+            opacity: 1;
+        }
+        .clip-angled {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
+        }
+        .clip-angled-reverse {
+            clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%);
+        }
+        .text-accent {
+            color: #ff5500;
+        }
+        .bg-accent {
+            background-color: #ff5500;
+        }
+        .border-accent {
+            border-color: #ff5500;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col bg-stripes">
+<!-- TopNavBar -->
+<nav class="bg-black/90 docked full-width top-0 sticky z-50 border-b-4 border-accent shadow-[0_4px_20px_rgba(255,85,0,0.15)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-extrabold tracking-tighter text-white uppercase">
+                Lenovo <span class="text-accent">LOQ</span>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white font-bold border-b-4 border-accent pb-1 font-label-sm text-label-sm uppercase tracking-widest" href="#">Performance</a>
+<a class="text-gray-400 hover:text-white transition-colors font-label-sm text-label-sm uppercase tracking-widest hover:bg-zinc-900 px-3 py-1" href="#">Cooling</a>
+<a class="text-gray-400 hover:text-white transition-colors font-label-sm text-label-sm uppercase tracking-widest hover:bg-zinc-900 px-3 py-1" href="#">Display</a>
+<a class="text-gray-400 hover:text-white transition-colors font-label-sm text-label-sm uppercase tracking-widest hover:bg-zinc-900 px-3 py-1" href="#">Reviews</a>
+<a class="text-gray-400 hover:text-white transition-colors font-label-sm text-label-sm uppercase tracking-widest hover:bg-zinc-900 px-3 py-1" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2 font-label-sm text-label-sm border-2 border-zinc-600 text-white uppercase tracking-widest hover:border-white transition-colors">
+                    Compare
+                </button>
+<button class="px-6 py-2 font-label-sm text-label-sm bg-accent text-black font-extrabold uppercase tracking-widest hover:bg-white transition-colors clip-angled-reverse">
+                    Buy Now
+                </button>
+</div>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative pt-20 pb-32 overflow-hidden border-b-4 border-zinc-900">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6 items-start">
+<div class="flex items-center gap-2 border-2 border-accent px-4 py-1 bg-accent/10">
+<span class="w-2 h-2 bg-accent animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-accent tracking-widest uppercase font-bold">
+                                SYSTEM.NEW_GEN_ACTIVE
+                            </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-white leading-tight uppercase font-black">
+                            GEAR UP.<br/><span class="text-accent">GAME ON.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-gray-300 max-w-xl border-l-4 border-accent pl-4">
+                            Experience uncompromised gaming performance with the new Lenovo LOQ. Powered by advanced architecture and designed for the future of play.
+                        </p>
+<div class="flex gap-4 mt-8">
+<button class="px-8 py-4 font-label-sm text-label-sm bg-accent text-black font-extrabold uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-2 clip-angled-reverse">
+                                Buy Now
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-8 py-4 font-label-sm text-label-sm bg-black border-2 border-zinc-600 text-white font-bold uppercase tracking-widest hover:border-white transition-colors flex items-center gap-2 clip-angled">
+                                View Specs
+                            </button>
+</div>
+</div>
+<div class="relative w-full aspect-video overflow-hidden border-4 border-zinc-800 bg-zinc-900 p-2 clip-angled">
+<img alt="Lenovo LOQ Gaming Laptop Front View" class="w-full h-full object-cover mix-blend-luminosity opacity-80 hover:mix-blend-normal hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiYLVELt4rT5c1pdd2L9g9UsXyZ5dX8bFeCuh_iVjVXN_T4XeJ9-u_tu6SpE42l-WN9TaGFbeZ043lHc0qAxlcG2eoFxqV7xNPUnZzFQr0SKsLQeswZnoZMwBWHpascYfGdxq-38zxWU-2gHMQzBNeR4NTLu6w-MUfl3LQQpRLeoLiO9m_TpopPyh8oiOFrYwTepXiXhshXRmKzcUXMPEBgp3AYM9FOQn9R_kOUqjNOqJdbr5sfzBrB77dGUNYb6nNm956CuR3trI"/>
+<div class="absolute inset-0 border-2 border-accent/30 pointer-events-none m-4"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specs Section -->
+<section class="py-24 bg-black relative border-b-4 border-zinc-900">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="mb-16 border-l-8 border-accent pl-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-2 uppercase tracking-tighter">Core Specs_</h2>
+<p class="font-body-md text-body-md text-gray-400 max-w-2xl">Precision engineered components working in perfect harmony to deliver maximum framerates and seamless multitasking.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Spec Card 1 -->
+<div class="data-tile p-8 flex flex-col gap-6 group transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-zinc-800 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-colors clip-angled-reverse">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<span class="font-label-xs text-zinc-600">01</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-gray-500 uppercase tracking-widest mb-2 font-bold">Processor</p>
+<p class="font-headline-md text-headline-md text-white uppercase">Intel Core<br/><span class="text-accent text-[24px]">i5-12450HX</span></p>
+</div>
+</div>
+<!-- Spec Card 2 -->
+<div class="data-tile p-8 flex flex-col gap-6 group transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-zinc-800 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-colors clip-angled-reverse">
+<span class="material-symbols-outlined">developer_board</span>
+</div>
+<span class="font-label-xs text-zinc-600">02</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-gray-500 uppercase tracking-widest mb-2 font-bold">GPU</p>
+<p class="font-headline-md text-headline-md text-white uppercase">NVIDIA GeForce<br/><span class="text-accent text-[24px]">RTX 3050 6GB</span></p>
+</div>
+</div>
+<!-- Spec Card 3 -->
+<div class="data-tile p-8 flex flex-col gap-6 group transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-zinc-800 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-colors clip-angled-reverse">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<span class="font-label-xs text-zinc-600">03</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-gray-500 uppercase tracking-widest mb-2 font-bold">Memory</p>
+<p class="font-headline-md text-headline-md text-white uppercase">16GB<br/><span class="text-accent text-[24px]">DDR5</span></p>
+</div>
+</div>
+<!-- Spec Card 4 -->
+<div class="data-tile p-8 flex flex-col gap-6 group transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-zinc-800 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-colors clip-angled-reverse">
+<span class="material-symbols-outlined">storage</span>
+</div>
+<span class="font-label-xs text-zinc-600">04</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-gray-500 uppercase tracking-widest mb-2 font-bold">Storage</p>
+<p class="font-headline-md text-headline-md text-white uppercase">512GB<br/><span class="text-accent text-[24px]">NVMe SSD</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 relative bg-black">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-[400px]">
+<!-- Large Feature: Ray Tracing -->
+<div class="lg:col-span-2 data-tile p-10 flex flex-col justify-end relative overflow-hidden group clip-angled">
+<img alt="Immersive gaming scene with glowing neon lights and dynamic shadows" class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A highly detailed, futuristic gaming environment rendered with intense neon pink and blue lighting. The scene features complex geometric structures with realistic reflections and deep shadows, highlighting the capability of advanced ray tracing graphics. The aesthetic is dark, premium, and cybernetic, perfectly aligning with a high-end PC gaming brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA61SXwXliwm0JFNo1TRLyAgEDwLtqLcjhSlj_m82E2ib4IsLvxWC1zzQuuhEMgwbqkPkYFvyQUS2pokey4sEQ91MTtsjAwYhD1XR5D_x_eYJhUKdzw7abC8wTdvALICfnm5IIpqV6WJer1NMmde4TYwfvquJ0xX7NEbJiAyFPYNjRL8d0QqMHm8XWCjttSacPSFU631kUyOcmHhQLYoQJixw276xsG60YKn1WZQTEBbtRuOefmaVab6j1YdgPKa2a1hvJjon7pkHg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+<div class="absolute inset-0 bg-stripes-accent pointer-events-none"></div>
+<div class="relative z-10 border-l-4 border-accent pl-6">
+<span class="font-label-xs text-label-xs text-black bg-accent px-3 py-1 mb-4 inline-block font-bold uppercase tracking-widest">NVIDIA Architecture</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-2 uppercase">Ray Tracing Unleashed</h3>
+<p class="font-body-md text-body-md text-gray-400 max-w-lg">Experience hyper-realistic graphics with hardware-accelerated ray tracing, bringing cinematic quality to your favorite titles.</p>
+</div>
+</div>
+<!-- Medium Feature: Cooling -->
+<div class="data-tile p-8 flex flex-col justify-between relative overflow-hidden group clip-angled-reverse">
+<!-- Thermal Vision Effect -->
+<div class="absolute inset-0 bg-gradient-to-br from-red-600 via-orange-500 to-yellow-400 opacity-40 mix-blend-color-dodge group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-50"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-black border-2 border-accent flex items-center justify-center text-accent mb-6">
+<span class="material-symbols-outlined">thermostat</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-2 uppercase">Thermal Config</h3>
+<p class="font-body-md text-body-md text-white/80 font-bold">Advanced thermal design with dual fans and larger vents keeps your system cool under intense loads.</p>
+</div>
+<div class="relative z-10 w-full mt-6 bg-black border-2 border-zinc-800 h-6 p-1">
+<div class="h-full bg-accent w-[85%] relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cGF0aCBkPSJNMCA4TDggMFY4SDBaIiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8L3N2Zz4=')]"></div>
+</div>
+</div>
+</div>
+<!-- Medium Feature: Keyboard -->
+<div class="data-tile p-8 flex flex-col justify-between relative overflow-hidden group clip-angled">
+<img alt="Close up of an RGB backlit gaming laptop keyboard" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 transition-all duration-500" data-alt="A macro, low-angle shot of a premium laptop keyboard illuminated by vibrant RGB backlighting. The keys glow with intense electric blue and neon purple hues against a dark, metallic surface. The lighting is moody and dramatic, emphasizing the tactile precision and high-tech nature of the hardware. The aesthetic is sleek, corporate modern, and gaming-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjAqKbfYJnlvVe4YHg4Ob9WICwz1xwkLc8EByht_eWuvnLPFj48FeiUlLNdw0MTwFd7FzQWTAIqijNBvJz2WmSAnjAQLV7_sUfl0l9iLmfyUTioGnw1f2N07JYmwx3P4zIxcW32QJV_sQvMN9cPpR_BNsJ12XCseD0moTAJCTN2q22dPVLpoIzIz0VDn69w5UsPiJIFpihCEZ1_1M4y-QVgcXMW2X8u5m8v74Tw9ckxNxXH-SQje9XCdy2V3L1VMc8wzL3gXoWkoM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+<div class="relative z-10 mt-auto border-l-4 border-white pl-4">
+<h3 class="font-headline-md text-headline-md text-white mb-2 uppercase">RGB Precision</h3>
+<p class="font-body-md text-body-md text-gray-400">Tactile feedback and customizable zones.</p>
+</div>
+</div>
+<!-- Medium Feature: Multitasking -->
+<div class="lg:col-span-2 data-tile p-10 flex items-center justify-between relative overflow-hidden group">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgxNzMsIDE5OSwgMjU1LCAwLjEpIi8+PC9zdmc+')] opacity-20 grayscale mix-blend-screen"></div>
+<div class="absolute top-0 right-0 p-4 font-label-xs text-zinc-700 tracking-widest">SYS_LOAD_MODULE</div>
+<div class="relative z-10 max-w-xl">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-4 uppercase">Fast Multitasking</h3>
+<p class="font-body-md text-body-md text-gray-400 mb-6">Switch between intense gaming, streaming, and content creation without breaking a sweat, thanks to DDR5 memory.</p>
+<div class="flex gap-4">
+<div class="px-4 py-2 bg-black border-2 border-zinc-700 font-label-xs text-label-xs text-white uppercase tracking-widest clip-angled">Gaming</div>
+<div class="px-4 py-2 bg-black border-2 border-zinc-700 font-label-xs text-label-xs text-white uppercase tracking-widest clip-angled">Streaming</div>
+<div class="px-4 py-2 bg-black border-2 border-zinc-700 font-label-xs text-label-xs text-white uppercase tracking-widest clip-angled">Creation</div>
+</div>
+</div>
+<div class="hidden md:flex relative z-10">
+<!-- Tactical telemetry dial -->
+<div class="w-48 h-48 border-4 border-zinc-800 flex items-center justify-center relative bg-black clip-angled-reverse">
+<svg class="absolute inset-0 w-full h-full -rotate-90 scale-90">
+<circle class="text-zinc-800" cx="96" cy="96" fill="none" r="80" stroke="currentColor" stroke-dasharray="10 5" stroke-width="8"></circle>
+<circle class="text-accent" cx="96" cy="96" fill="none" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="380" stroke-width="8"></circle>
+</svg>
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-gray-500 block uppercase tracking-widest font-bold">CPU LOAD</span>
+<span class="font-headline-md text-headline-md text-accent block font-black">24%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black full-width py-12 border-t-8 border-accent">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto gap-gutter">
+<div class="font-headline-md text-headline-md font-black text-white uppercase tracking-tighter">
+                Lenovo <span class="text-accent">LOQ</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-gray-500 hover:text-accent transition-colors duration-200 uppercase tracking-widest font-bold" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-gray-500 hover:text-accent transition-colors duration-200 uppercase tracking-widest font-bold" href="#">Terms of Use</a>
+<a class="font-label-sm text-label-sm text-gray-500 hover:text-accent transition-colors duration-200 uppercase tracking-widest font-bold" href="#">Sustainability</a>
+<a class="font-label-sm text-label-sm text-gray-500 hover:text-accent transition-colors duration-200 uppercase tracking-widest font-bold" href="#">Global Support</a>
+</div>
+<div class="font-body-md text-body-md text-zinc-600 text-center md:text-right uppercase text-xs tracking-widest">
+                © 2024 Lenovo. Engineered for the new generation.
+            </div>
+</div>
+</footer>
+</body></html>
